@@ -5,7 +5,6 @@
     --black: #000;
     --white: #fff;
     --text-color: #161823;
-    
 
     --font-family: 'ProximaNova', sans-serif;
 
@@ -32,12 +31,14 @@ body {
     overflow-y: overlay;
 }
 
-button, input,[tabindex]{
+button,
+input,
+[tabindex] {
     outline: none;
     border: none;
 }
 
-a[href]{
-    color:var(--text-color);
+a[href] {
+    color: var(--text-color);
     text-decoration: none;
 }
