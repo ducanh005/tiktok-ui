@@ -9,7 +9,7 @@ import { useState } from 'react';
 const cx = classNames.bind(styles);
 const defaultFn = () => {};
 
-function Menu({ children, items = [],hideOnClick= false, onChange = defaultFn }) {
+function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn }) {
     const [history, setHistory] = useState([{ data: items }]);
     const current = history[history.length - 1];
     const renderItem = () => {
@@ -34,7 +34,8 @@ function Menu({ children, items = [],hideOnClick= false, onChange = defaultFn })
 
     return (
         <Tippy
-        offset={[12,8]}
+       
+            offset={[12, 8]}
             delay={[0, 700]}
             interactive
             hideOnClick={hideOnClick}
@@ -52,11 +53,11 @@ function Menu({ children, items = [],hideOnClick= false, onChange = defaultFn })
                                 {' '}
                             </Header>
                         )}
-                        {renderItem()}
+                        <div className={cx('menu-body')}> {renderItem()}</div>
                     </PropperWrapper>
                 </div>
             )}
-            onHide={()=> setHistory(prev=>prev.slice(0,1))}
+            onHide={() => setHistory((prev) => prev.slice(0, 1))}
         >
             {children}
         </Tippy>
