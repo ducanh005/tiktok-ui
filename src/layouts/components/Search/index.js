@@ -3,7 +3,7 @@ import HeadlessTippy from '@tippyjs/react/headless';
 import { Wrapper as PropperWrapper } from '~/components/Popper';
 import classNames from 'classnames/bind';
 
-import * as searchServices from '~/apiServices/searchServices';
+import * as searchServices from '~/services/searchService';
 import AccountItem from '~/components/Accountitem';
 import { SearchIcon } from '~/components/Icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -57,7 +57,7 @@ function Search() {
     };
 
     return (
-       <div>
+        <div>
             <HeadlessTippy
                 interactive
                 visible={showResult && searchResult.length > 0}
@@ -88,13 +88,13 @@ function Search() {
                         </button>
                     )}
                     {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />}
-    
+
                     <button className={cx('search-btn')} onMouseDown={(e) => e.preventDefault()}>
                         <SearchIcon></SearchIcon>
                     </button>
                 </div>
             </HeadlessTippy>
-       </div>
+        </div>
     );
 }
 
