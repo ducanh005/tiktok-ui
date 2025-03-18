@@ -33,7 +33,7 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
         });
     };
 
-    const handleReset =() => {
+    const handleBack =() => {
         setHistory((prev) => prev.slice(0, prev.length - 1));
     }
 
@@ -43,7 +43,7 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
                 {history.length > 1 && (
                     <Header
                         title={current.title}
-                        onBack={handleReset}
+                        onBack={handleBack}
                     >
                         {' '}
                     </Header>
@@ -65,7 +65,7 @@ function Menu({ children, items = [], hideOnClick = false, onChange = defaultFn 
             hideOnClick={hideOnClick}
             placement="bottom-end"
             render={renderResult}
-            onHide={handleReset}
+            onHide={handleResetMenu}
         >
             {children}
         </Tippy>
